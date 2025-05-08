@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BestPods – FAQ</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #007aff;
+      --light: #f9f9f9;
+      --dark: #111;
+      --gray: #666;
+      --border-radius: 12px;
+      --transition-time: 0.3s;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    body {
+      background-color: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: white;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo img {
+      height: 80px;
+      width: 80px;
+    }
+
+    nav a {
+      margin-left: 1.5rem;
+      text-decoration: none;
+      color: var(--dark);
+      font-weight: 500;
+      font-size: 1.1rem;
+    }
+
+    .section {
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .faq-item {
+      margin-bottom: 1.5rem;
+      text-align: left;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .faq-item h3 {
+      font-size: 1.4rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    .faq-item p {
+      color: var(--gray);
+      font-size: 1rem;
+    }
+
+    footer {
+      background: white;
+      padding: 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--gray);
+      margin-top: 3rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo"><img src="logonb.png" alt="logo"></div>
+    <nav>
+      <a href="index.html">Strona Główna</a>
+      <a href="products.html">Produkty</a>
+      <a href="faq.html">FAQ</a>
+    </nav>
+  </header>
+
+  <section class="section" id="faq">
+    <h1>Najczęściej Zadawane Pytania (FAQ)</h1>
+    <br>
+    <div class="faq-item">
+        <h3>1. Kiedy moje zamówienie zostanie wysłane?</h3>
+        <p>Wszystkie zamówienia są realizowane w ciągu 1-2 dni roboczych, jednak w przypadku braku dostępności produktów czas oczekiwania może wynieść do 30 dni roboczych.</p>
+    </div>
+    <br>
+    <div class="faq-item">
+        <h3>2. Jakie są opcje płatności?</h3>
+        <p>Oferujemy płatności poprzez serwis Stripe kartą kredytową lub za pośrednictwem systemów Blik, ApplePay oraz GooglePay.</p>
+    </div>
+    <br>
+    <div class="faq-item">
+        <h3>3. Czy mogę zwrócić produkt?</h3>
+        <p>Tak, masz 14 dni na zwrot produktu od momentu otrzymania paczki. Produkt musi być w stanie nienaruszonym, w oryginalnym, zaplombowanym opakowaniu.
+            Jeśli jednak produkt nie działa, lub jest częściowo niesprawny, klientowi przysługuje prawo do reklamacji drogą mailową: <b>bestpods.service@gmail.com</b>
+        </p>
+    </div>
+    <br>
+    <div class="faq-item">
+        <h3>4. Jak mogę skontaktować się z obsługą klienta?</h3>
+        <p>Możesz skontaktować się z nami za pomocą formularza kontaktowego na stronie lub wysyłając wiadomość na adres e-mail: <strong>bestpods.service@gmail.com</strong>.</p>
+    </div>
+    <br>
+    <div class="faq-item">
+        <h3>5. Czy oferujecie międzynarodową wysyłkę?</h3>
+        <p>Na chwilę obecną wysyłamy produkty tylko na terenie Polski. Planujemy rozszerzenie naszej oferty na inne kraje w przyszłości.</p>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 BestPods. Wszelkie prawa zastrzeżone.<br>
+    Zapoznaj się z <a href="REGULAMIN SPRZEDAŻY BESTPODS.pdf">regulaminem</a>
+  </footer>
+</body>
+</html>

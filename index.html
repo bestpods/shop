@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BestPods – Strona Główna</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- CSS Swiper -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+<!-- JS Swiper -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <style>
+    :root {
+      --primary: #007aff;
+      --light: #f9f9f9;
+      --dark: #111;
+      --gray: #666;
+      --border-radius: 12px;
+      --transition-time: 0.3s;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Outfit', sans-serif;
+
+    }
+
+    body {
+      background-color: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: white;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo img {
+      height: 80px;
+      width: 80px;
+    }
+
+    nav a {
+      margin-left: 1.5rem;
+      text-decoration: none;
+      color: var(--dark);
+      font-weight: 500;
+      font-size: 1.1rem;
+    }
+
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem 2rem;
+      background: linear-gradient(to bottom, white, #e6f0ff);
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: var(--dark);
+    }
+
+    .hero p {
+      max-width: 600px;
+      margin-bottom: 2rem;
+      color: var(--gray);
+    }
+
+    .hero button {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.75rem 2rem;
+      font-size: 1.1rem;
+      border-radius: var(--border-radius);
+      cursor: pointer;
+      transition: background-color var(--transition-time), transform var(--transition-time);
+    }
+
+    .hero button:hover {
+      background-color: #005fcc;
+      transform: scale(1.05);
+    }
+
+    .hero button:active {
+      background-color: #0049b0;
+    }
+
+    .section {
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    .section .slides {
+      color: #fff;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    .features, .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: var(--border-radius);
+      padding: 2rem;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+      transition: transform var(--transition-time);
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+    }
+
+    .card h3 {
+      margin-bottom: 1rem;
+      color: var(--dark);
+    }
+
+    .card p {
+      color: var(--gray);
+    }
+
+    .testimonials {
+      background: #fff;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .testimonials h2 {
+      margin-bottom: 2rem;
+      color: var(--dark);
+    }
+
+    .testimonial-cards {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .testimonial {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: var(--border-radius);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+      padding: 2rem;
+      font-size: 0.95rem;
+      position: relative;
+      transition: transform var(--transition-time);
+    }
+
+    .testimonial:hover {
+      transform: scale(1.05);
+    }
+
+    .testimonial::before {
+      content: "\2605 \2605 \2605 \2605 \2605";
+      color: gold;
+      font-size: 1.2rem;
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    .testimonial img {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 0.5rem;
+    }
+
+    footer {
+      background: white;
+      padding: 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--gray);
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero button {
+        font-size: 1rem;
+      }
+    }
+    .button-link {
+  display: inline-block;
+  background-color: var(--primary);
+  color: white;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  border-radius: 30px;
+  text-align: center;
+  text-decoration: none; /* Usuwa podkreślenie z linku */
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.button-link:hover {
+  background-color: #005fcc;
+  transform: scale(1.05);
+}
+
+.button-link:active {
+  background-color: #0049b0;
+}
+.swiper {
+  width: 100%;
+  max-width: 800px;
+  aspect-ratio: 4 / 4; /* Automatyczna wysokość proporcjonalna */
+  margin: 0 auto;
+  padding: 0;
+  background-color: #fff;
+  scale: 0.8;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo"><img src="logonb.png" alt="logo"></div>
+    <nav>
+      <a href="index.html">Strona Główna</a>
+      <a href="products.html">Produkty</a>
+      <a href="faq.html">FAQ</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Witaj w świecie cudownych dźwięków!</h1>
+    <p>Poznaj BestPods – słuchawki premium, ale za normalne pieniądze. <br> Zanurz się w harmonii idealnego dźwięku, wspomaganego ANC.</p>
+    <a href="products.html" class="button-link">Poznaj BestPods</a>
+  </section><br>
+
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="bestpodspro2.jpg" alt="Obraz 1"></div>
+      <div class="swiper-slide"><img src="bestpodspro.jpg" alt="Obraz 2"></div>
+      <div class="swiper-slide"><img src="bestpods4.jpg" alt="Obraz 3"></div>
+      <div class="swiper-slide"><img src="bestpodsmax.jpg" alt="Obraz 4"></div>
+      <!-- dodaj więcej obrazów -->
+    </div>
+  </div>  
+
+  <section class="section" id="features">
+    <h2>Dlaczego BestPods?</h2>
+    <div class="features">
+      <div class="card">
+        <h3>✅ Dźwięk premium + ANC </h3>
+        <p>Wyraźny bas, czysty środek, jak w sprzętach topowej półki. Modele posiadają również ANC, które działa znakomicie!</p>
+      </div>
+      <div class="card">
+        <h3>✅ Niska cena</h3>
+        <p>Design i jakość przypominające modny produkt znanej marki, kosztują jednak dużo mniej.</p>
+      </div>
+      <div class="card">
+        <h3>✅ USB-C + Bluetooth 5.3</h3>
+        <p>Nowoczesna łączność i szybkie ładowanie.</p>
+      </div>
+      <div class="card">
+        <h3>✅ Oprogramowanie</h3>
+        <p>Pop-up window oraz FindMy na iPhone'ach</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials" id="opinie">
+    <h2>Co mówią nasi klienci?</h2>
+    <div class="testimonial-cards">
+      <div class="testimonial">
+        <img src="opinia1.png" alt="Michał">
+        <figcaption><b>Michał</b></figcaption>
+        <br>
+        <p>Nie spodziewałem się takiej jakości za tę cenę.<br> 
+          Dźwięk tej samej klasy co w tych najdroższych, serio.</p>
+      </div>
+      <div class="testimonial">
+        <img src="opinia2.png" alt="Kasia">
+        <figcaption><b>Kasia</b></figcaption>
+        <br>
+        <p>Testowałam kilka podobnych opcji – BestPods wypadły najlepiej. <br>ANC działa super!</p>
+      </div>
+      <div class="testimonial">
+        <img src="opinia3.png" alt="Rafał">
+        <figcaption><b>Rafał</b></figcaption>
+        <br>
+        <p>Kupione na próbę – szykuje się grubsze zamówienie. <br>Zdecydowanie polecam!</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <h2>Skontaktuj się z nami</h2>
+    <br>
+    <p>Masz pytanie? Pisz śmiało na: <strong>bestpods.service@gmail.com</strong></p>
+    <p>Obserwuj nas na TikToku: <strong>@bestpods.sell</strong></p>
+  </section>
+
+  <footer>
+    &copy; 2025 BestPods. Wszelkie prawa zastrzeżone.<br>
+    Zapoznaj się z <a href="REGULAMIN SPRZEDAŻY BESTPODS.pdf">regulaminem</a>
+  </footer>
+</body>
+</html>
+
+<script>
+  const swiper = new Swiper(".mySwiper", {
+    loop: true,
+    autoplay: {
+      delay: 3000, // czas między przesuwaniem (ms)
+      disableOnInteraction: false,
+    },
+    speed: 600, // prędkość animacji
+  });
+</script>
